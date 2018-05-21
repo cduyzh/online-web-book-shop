@@ -10,27 +10,27 @@ Undergraduate Graduation Project—— Online web book app
 
 ### 首页
 
-![cduyzh web book](https://github.com/cduyzh/UndergraduateGraduationProject/gif/web_book1.gif)
+![cduyzh web book](https://github.com/cduyzh/UndergraduateGraduationProject/blob/master/gif/web_book1.gif)
 
 ### 登录注册
 
-![cduyzh web book](https://img.cduyzh.com/web_book2.gif)
+![cduyzh web book](https://github.com/cduyzh/UndergraduateGraduationProject/blob/master/gif/web_book2.gif)
 
 ### 图书信息查看
 
-![cduyzh web book](https://img.cduyzh.com/web_book3.gif)
+![cduyzh web book](https://github.com/cduyzh/UndergraduateGraduationProject/blob/master/gif/web_book3.gif)
 
 ### 阅读读书
 
-![cduyzh web book](https://img.cduyzh.com/web_book4.gif)
+![cduyzh web book](https://github.com/cduyzh/UndergraduateGraduationProject/blob/master/gif/web_book4.gif)
 
 ### 更多图书
 
-![cduyzh web book](https://img.cduyzh.com/web_book5.gif)
+![cduyzh web book](https://github.com/cduyzh/UndergraduateGraduationProject/blob/master/gif/web_book5.gif)
 
 ### 后台界面
 
-![cduyzh web book](https://img.cduyzh.com/web_book6.gif)
+![cduyzh web book](https://github.com/cduyzh/UndergraduateGraduationProject/blob/master/gif/web_book6.gif)
 
 ## special suggestion
 
