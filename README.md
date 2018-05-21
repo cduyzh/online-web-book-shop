@@ -10,7 +10,7 @@ Undergraduate Graduation Project—— Online web book app
 
 ### 首页
 
-![cduyzh web book](https://img.cduyzh.com/web_book1.gif)
+![cduyzh web book](https://github.com/cduyzh/UndergraduateGraduationProject/gif/web_book1.gif)
 
 ### 登录注册
 
