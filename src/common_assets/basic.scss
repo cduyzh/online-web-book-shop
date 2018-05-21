@@ -1,0 +1,137 @@
+@import './basic_const';
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+// vue编译结束前不显示带v-cloak的标签
+[v-cloak] {
+    display: none !important;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea {
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+
+    // 以下3组必须分开写才能生效，不能合并
+    &::-webkit-input-placeholder {
+        color: #b6b7b7 !important;
+    }
+    &::-moz-placeholder {
+        color: #b6b7b7 !important;
+    }
+    &:-ms-input-placeholder {
+        color: #b6b7b7 !important;
+    }
+}
+
+.no-highlight {
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+label {
+    -webkit-tap-highlight-color: transparent;
+}
+
+// 内部全是float元素的容器，解决容器没有宽高的问题
+.float-container {
+    &:after,
+    &:before {
+        display: table;
+        content: '';
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.user-select-none {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.5);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/***********************常用样式***********************/
+
+//UC 上有一个插件，导致页面显示不完全，出现了滚动条，把它隐藏掉，哼哼
+#trans-tooltip,
+#tip-arrow-bottom,
+#tip-arrow-top {
+    display: none;
+}
+
+.button-disable {
+    pointer-events: none;
+    opacity: 0.5;
+}

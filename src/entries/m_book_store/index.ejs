@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>在线书城</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <script>
+        (function(doc, win, designWidth, remPx) {
+            // 计算rem用到的根节点font-size，设置到html标签上
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = remPx * (clientWidth / designWidth) + 'px';
+                    setTimeout(modifileRootRem, 10)
+                };
+            win.addEventListener(resizeEvt, recalc, false); // 监听方向改变
+            if (doc.addEventListener) {
+                doc.addEventListener('DOMContentLoaded', recalc, false); //dom 结构完就开始计算
+            }
+
+            // 有些手机设置了字体大小，会导致我们设置html字体大小后，最终测量得到的是另一个fontSize。在这里对字体大小进行微调
+            function modifileRootRem() {
+                var fontSize = parseFloat(docEl.style.fontSize);
+                var finalFontSize = parseFloat(window.getComputedStyle(docEl).getPropertyValue("font-size"));
+                if (finalFontSize !== fontSize) {
+                    // TODO 改成按比例乘法可能更精确
+                    docEl.style.fontSize = fontSize + (fontSize - finalFontSize) + "px";
+                }
+            }
+        })(document, window, 375, 100); // 屏幕宽度为375时的font-size为100px，这个值需要与vue-loader.conf.js中的一致
+    </script>
+    <script type="text/javascript" src="http://at.alicdn.com/t/font_621901_3g2c30ria7ix80k9.js">
+    </script>
+</head>
+
+<body class="user-select-none">
+    <div id="app"></div>
+
+    <% if (htmlWebpackPlugin.options.isDevelop) { %>
+        <script type="text/javascript" src="http://spacdn.hellobyebye.com/vconsole.min.js"></script>
+        <% } %>
+            <script type="text/javascript">
+                <% if (htmlWebpackPlugin.options.isDevelop) { %>
+                window.gDevEnv = true;
+                <% } %>
+                var gProjectName = '<%= htmlWebpackPlugin.options.projectName %>';
+                var gPublicBaseUrl = '<%= htmlWebpackPlugin.options.publicBaseUrl %>';
+                var gEntryName = '<%= htmlWebpackPlugin.options.entryName %>';
+                var gBaseUrl = '<%= htmlWebpackPlugin.options.apiBaseUrl %>';
+            </script>
+</body>
+
+</html>

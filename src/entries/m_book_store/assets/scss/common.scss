@@ -1,0 +1,160 @@
+/* 字体大小 font-size: 12,14,16,18
+ ========================================================================== */
+$font-size: (10, 12, 13, 14, 15, 16, 17, 18, 20, 22, 24, 28, 30, 32, 34, 36, 38, 40, 48, 50);
+$prefix-font-size: fs;
+$unit: px;
+@mixin font-size {
+    @each $value in $font-size {
+        .#{$prefix-font-size}#{$value} {
+            font-size: $value*0.01rem;
+        }
+    }
+}
+
+@include font-size;
+
+/* 字体粗细 font-weight: 100-900
+ ========================================================================== */
+
+$font-weight: (400, 700, 100, 200, 300, 500, 600, 800, 900);
+$prefix-font-weight: fw;
+@mixin font-weight {
+    @each $value in $font-weight {
+        .#{$prefix-font-weight}#{$value} {
+            font-weight: $value;
+        }
+    }
+}
+
+@include font-weight;
+
+/* 字体颜色
+ ========================================================================== */
+$font-color-main: #d1ae82;
+$btn-bgc-main: #fff;
+$btn-bgc-main-hover: #eac693;
+
+/* 动画
+========================================================================== */
+/* hide */
+.hide {
+    opacity: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+// fade in/out
+.fade-enter-active,
+.fade-leave-active {
+    transition: all 0.3s ease-in;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+// blur animation
+.bgBlurIn {
+    animation: BlurIn 1s;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    filter: blur(5px);
+}
+
+.bgBlurOut {
+    animation: BlurOut 0.3s;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    filter: blur(0px);
+}
+
+.moveUp {
+    transform: translateY(-35px);
+    -webkit-transform: translateY(-35px);
+    -moz-transform: translateY(-35px);
+    -o-transform: translateY(-35px);
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -o-transition: all 1s ease;
+}
+
+.moveDown {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -o-transform: translateY(0);
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+@keyframes BlurIn {
+    0% {
+        -webkit-filter: blur(1px);
+        -moz-filter: blur(1px);
+        -o-filter: blur(1px);
+        filter: blur(1px);
+    }
+    50% {
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        filter: blur(3px);
+    }
+    100% {
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        filter: blur(5px);
+    }
+}
+
+@keyframes BlurOut {
+    0% {
+        -webkit-filter: blur(5px);
+        -moz-filter: blur(5px);
+        -o-filter: blur(5px);
+        filter: blur(5px);
+    }
+    50% {
+        -webkit-filter: blur(3px);
+        -moz-filter: blur(3px);
+        -o-filter: blur(3px);
+        filter: blur(3px);
+    }
+    100% {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+// fromtop
+.fromTop-enter-active,
+.fromTop-leave-active {
+    transition: all 0.4s ease-in;
+}
+
+.fromTop-enter,
+.fromTop-leave-to {
+    transform: translateY(-100%);
+}
+
+// fromBottom
+.fromBottom-enter-active,
+.fromBottom-leave-active {
+    transition: all 0.4s ease-in;
+}
+
+.fromBottom-enter,
+.fromBottom-leave-to {
+    transform: translateY(100%);
+}

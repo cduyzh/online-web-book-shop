@@ -1,0 +1,226 @@
+@import './basic_const';
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding-left: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+// vue编译结束前不显示带v-cloak的标签
+[v-cloak] {
+    display: none !important;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea {
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+
+    // 以下3组必须分开写才能生效，不能合并
+    &::-webkit-input-placeholder {
+        color: #b6b7b7 !important;
+    }
+    &::-moz-placeholder {
+        color: #b6b7b7 !important;
+    }
+    &:-ms-input-placeholder {
+        color: #b6b7b7 !important;
+    }
+}
+
+.no-highlight {
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+label {
+    -webkit-tap-highlight-color: transparent;
+}
+
+// 内部全是float元素的容器，解决容器没有宽高的问题
+.float-container {
+    &:after,
+    &:before {
+        display: table;
+        content: '';
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+.user-select-none {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.5);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/***********************常用样式***********************/
+
+//UC 上有一个插件，导致页面显示不完全，出现了滚动条，把它隐藏掉，哼哼
+#trans-tooltip,
+#tip-arrow-bottom,
+#tip-arrow-top {
+    display: none;
+}
+
+.button-disable {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+// mint-ui弹框样式
+.mint-msgbox-header {
+    display: none;
+}
+
+.mint-msgbox-content {
+    border-bottom: none;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.mint-msgbox-message {
+    line-height: 20px;
+}
+
+.mint-msgbox-cancel {
+    border: 1px solid $basic-primary;
+    color: $basic-primary;
+    margin: 0 0 10px 12px;
+    border-radius: 4px;
+    line-height: 28px;
+    &:active {
+        color: $basic-primary-highlight;
+        border-color: $basic-primary-highlight;
+    }
+}
+
+.mint-msgbox-confirm {
+    background: $basic-primary;
+    color: $text-white;
+    margin: 0 12px 10px 12px;
+    border-radius: 4px;
+    line-height: 28px;
+    &:active {
+        color: $text-white;
+        background: $basic-primary-highlight;
+    }
+}
+
+// 灰色背景顶部的mintUI Toast
+.grey-toast {
+    background: #5f5f5f;
+}
+
+// 白色背景居中的mintUI Toast
+.white-toast {
+    background: #fff;
+    min-width: 150px;
+    height: 150px;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &.is-placetop {
+        top: 100px;
+    }
+    .mint-toast-text {
+        color: #000;
+        font-size: 18px;
+    }
+}
+
+// 提示框上按钮样式
+.toast-icon {
+    display: block;
+    background-size: contain;
+    width: 51px;
+    height: 51px;
+    &.toast-icon-succeed {
+        background-image: url(./imgs/icon/toast_succeed.png);
+    }
+    &.toast-icon-failed {
+        background-image: url(./imgs/icon/toast_failed.png);
+    }
+    &.toast-icon-loading {
+        background-image: url(./imgs/icon/toast_loading.png);
+        animation: spin 1300ms infinite linear;
+    }
+    @keyframes spin {
+        0% {
+            transform: rotate(360deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+}
